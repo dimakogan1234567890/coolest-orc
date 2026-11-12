@@ -1,0 +1,16 @@
+{
+  "date": "2026-11-12",
+  "scope": "Проверка документов, не работающего приложения",
+  "markdown_files": 11,
+  "business_requirements": 4,
+  "stories": 11,
+  "acceptance_criteria": 34,
+  "nfr": 13,
+  "backlog_tasks": 18,
+  "pdf_pages": 34,
+  "brief_pages": 4,
+  "broken_local_links": [],
+  "pdf_out_of_page_chars": [],
+  "rendered_pages": 34,
+  "visual_review": "Все страницы просмотрены; UI/серверные тесты не выполнялись"
+}
