@@ -1,76 +1,90 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680">
-<rect width="1200" height="680" fill="#ffffff"/>
-<style>text{font-family:Segoe UI,Arial,sans-serif;fill:#23372b}</style>
-<text x="24" y="32" font-size="24" font-weight="700">USM-01 · Самый крутой орк · 12.11.2026 · 1.0 DRAFT</text>
-<text x="24" y="56" font-size="14">Владелец: Коган Дмитрий Андреевич. Две дорожки MVP входят в первый релиз.</text>
-<rect x="24.0" y="80" width="157.29" height="56.8" fill="#eaf0e4" stroke="#c8d3c3"/>
-<text x="33.0" y="105" font-size="14" font-weight="700">Активность</text>
-<rect x="181.29" y="80" width="194.88959055118113" height="56.8" fill="#eaf0e4" stroke="#c8d3c3"/>
-<text x="190.29" y="105" font-size="14" font-weight="700">Собрать компанию</text>
-<rect x="376.1795905511811" y="80" width="194.88959055118113" height="56.8" fill="#eaf0e4" stroke="#c8d3c3"/>
-<text x="385.1795905511811" y="105" font-size="14" font-weight="700">Присоединиться</text>
-<rect x="571.0691811023622" y="80" width="194.88959055118113" height="56.8" fill="#eaf0e4" stroke="#c8d3c3"/>
-<text x="580.0691811023622" y="105" font-size="14" font-weight="700">Начать и понять поле</text>
-<rect x="765.9587716535434" y="80" width="194.88959055118113" height="56.8" fill="#eaf0e4" stroke="#c8d3c3"/>
-<text x="774.9587716535434" y="105" font-size="14" font-weight="700">Сыграть партию</text>
-<rect x="960.8483622047245" y="80" width="194.88959055118113" height="56.8" fill="#eaf0e4" stroke="#c8d3c3"/>
-<text x="969.8483622047245" y="105" font-size="14" font-weight="700">Получить результат</text>
-<rect x="24.0" y="136.8" width="157.29" height="117.86" fill="#eaf0e4" stroke="#c8d3c3"/>
-<text x="33.0" y="161.8" font-size="14" font-weight="700">MVP</text>
-<text x="33.0" y="180.8" font-size="14" font-weight="700">Организатор</text>
-<rect x="181.29" y="136.8" width="194.88959055118113" height="117.86" fill="#eaf0e4" stroke="#c8d3c3"/>
-<text x="190.29" y="161.8" font-size="14" font-weight="400">US-001 Создать комнату</text>
-<rect x="376.1795905511811" y="136.8" width="194.88959055118113" height="117.86" fill="#eaf0e4" stroke="#c8d3c3"/>
-<text x="385.1795905511811" y="161.8" font-size="14" font-weight="400">Передать код друзьям</text>
-<rect x="571.0691811023622" y="136.8" width="194.88959055118113" height="117.86" fill="#eaf0e4" stroke="#c8d3c3"/>
-<text x="580.0691811023622" y="161.8" font-size="14" font-weight="400">US-003 Начать партию</text>
-<rect x="765.9587716535434" y="136.8" width="194.88959055118113" height="117.86" fill="#eaf0e4" stroke="#c8d3c3"/>
-<text x="774.9587716535434" y="161.8" font-size="14" font-weight="400">Участвует как игрок</text>
-<rect x="960.8483622047245" y="136.8" width="194.88959055118113" height="117.86" fill="#eaf0e4" stroke="#c8d3c3"/>
-<text x="969.8483622047245" y="161.8" font-size="14" font-weight="400">Читает общий итог</text>
-<rect x="24.0" y="254.66000000000003" width="157.29" height="133.48" fill="#eaf0e4" stroke="#c8d3c3"/>
-<text x="33.0" y="279.66" font-size="14" font-weight="700">MVP</text>
-<text x="33.0" y="298.66" font-size="14" font-weight="700">Участник</text>
-<rect x="181.29" y="254.66000000000003" width="194.88959055118113" height="133.48" fill="#eaf0e4" stroke="#c8d3c3"/>
-<text x="190.29" y="279.66" font-size="14" font-weight="400">Получить код</text>
-<rect x="376.1795905511811" y="254.66000000000003" width="194.88959055118113" height="133.48" fill="#eaf0e4" stroke="#c8d3c3"/>
-<text x="385.1795905511811" y="279.66" font-size="14" font-weight="400">US-002 Войти</text>
-<rect x="571.0691811023622" y="254.66000000000003" width="194.88959055118113" height="133.48" fill="#eaf0e4" stroke="#c8d3c3"/>
-<text x="580.0691811023622" y="279.66" font-size="14" font-weight="400">US-004 Увидеть стол</text>
-<rect x="765.9587716535434" y="254.66000000000003" width="194.88959055118113" height="133.48" fill="#eaf0e4" stroke="#c8d3c3"/>
-<text x="774.9587716535434" y="279.66" font-size="14" font-weight="400">US-005/006/007 Сыграть</text>
-<text x="774.9587716535434" y="298.66" font-size="14" font-weight="400">карту; US-008 Очередь;</text>
-<text x="774.9587716535434" y="317.66" font-size="14" font-weight="400">US-011 Вернуться</text>
-<rect x="960.8483622047245" y="254.66000000000003" width="194.88959055118113" height="133.48" fill="#eaf0e4" stroke="#c8d3c3"/>
-<text x="969.8483622047245" y="279.66" font-size="14" font-weight="400">US-009 Очки; US-010</text>
-<text x="969.8483622047245" y="298.66" font-size="14" font-weight="400">Итог</text>
-<line x1="24" y1="388.14" x2="1156" y2="388.14" stroke="#5f793b" stroke-width="5"/>
-<rect x="24.0" y="388.14" width="157.29" height="80.94" fill="#f2f1ec" stroke="#c8d3c3"/>
-<text x="33.0" y="413.14" font-size="14" font-weight="700">Следующий</text>
-<text x="33.0" y="432.14" font-size="14" font-weight="700">релиз</text>
-<rect x="181.29" y="388.14" width="194.88959055118113" height="80.94" fill="#f2f1ec" stroke="#c8d3c3"/>
-<text x="190.29" y="413.14" font-size="14" font-weight="400">US-101 Hot seat</text>
-<rect x="376.1795905511811" y="388.14" width="194.88959055118113" height="80.94" fill="#f2f1ec" stroke="#c8d3c3"/>
-<text x="385.1795905511811" y="413.14" font-size="14" font-weight="400">US-102 Боты</text>
-<rect x="571.0691811023622" y="388.14" width="194.88959055118113" height="80.94" fill="#f2f1ec" stroke="#c8d3c3"/>
-<text x="580.0691811023622" y="413.14" font-size="14" font-weight="400">US-104 Язык и звук</text>
-<rect x="765.9587716535434" y="388.14" width="194.88959055118113" height="80.94" fill="#f2f1ec" stroke="#c8d3c3"/>
-<text x="774.9587716535434" y="413.14" font-size="14" font-weight="400">US-103 Исключить /</text>
-<text x="774.9587716535434" y="432.14" font-size="14" font-weight="400">заменить</text>
-<rect x="960.8483622047245" y="388.14" width="194.88959055118113" height="80.94" fill="#f2f1ec" stroke="#c8d3c3"/>
-<text x="969.8483622047245" y="413.14" font-size="14" font-weight="400">Статистика партий</text>
-<rect x="24.0" y="469.08" width="157.29" height="95.14" fill="#f2f1ec" stroke="#c8d3c3"/>
-<text x="33.0" y="494.08" font-size="14" font-weight="700">Вне scope</text>
-<rect x="181.29" y="469.08" width="194.88959055118113" height="95.14" fill="#f2f1ec" stroke="#c8d3c3"/>
-<text x="190.29" y="494.08" font-size="14" font-weight="400">Публичный подбор</text>
-<rect x="376.1795905511811" y="469.08" width="194.88959055118113" height="95.14" fill="#f2f1ec" stroke="#c8d3c3"/>
-<text x="385.1795905511811" y="494.08" font-size="14" font-weight="400">Аккаунты и соцсеть</text>
-<rect x="571.0691811023622" y="469.08" width="194.88959055118113" height="95.14" fill="#f2f1ec" stroke="#c8d3c3"/>
-<text x="580.0691811023622" y="494.08" font-size="14" font-weight="400">Магазин и платежи</text>
-<rect x="765.9587716535434" y="469.08" width="194.88959055118113" height="95.14" fill="#f2f1ec" stroke="#c8d3c3"/>
-<text x="774.9587716535434" y="494.08" font-size="14" font-weight="400">Новые правила / сезоны</text>
-<rect x="960.8483622047245" y="469.08" width="194.88959055118113" height="95.14" fill="#f2f1ec" stroke="#c8d3c3"/>
-<text x="969.8483622047245" y="494.08" font-size="14" font-weight="400">Рейтинг и турниры</text>
-<text x="24" y="592.22" font-size="14" font-weight="400">Зелёная линия - граница MVP. После старта организатор также играет как участник.</text>
-<text x="24" y="625.22" font-size="14" font-weight="400">Передача: код → вход участника → состав → старт создателем → общее поле.</text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="660" viewBox="0 0 1200 660">
+<rect width="1200" height="660" fill="white"/>
+<style>text{font-family:"Segoe UI",Arial,sans-serif;fill:#24372f;font-size:17px}.head{font-weight:700}.note{font-size:15px;fill:#68756d}</style>
+<text x="18" y="35" class="head" style="font-size:25px">Самый крутой орк · карта историй</text>
+<rect x="0" y="63" width="150" height="58" fill="#edf2e8" stroke="#cfdbcd"/>
+<text x="12" y="98.0" class="head">Действие</text>
+<rect x="150.0" y="63" width="210.0" height="58" fill="#edf2e8" stroke="#cfdbcd"/>
+<text x="162.0" y="98.0" class="head">Собраться</text>
+<rect x="360.0" y="63" width="210.0" height="58" fill="#edf2e8" stroke="#cfdbcd"/>
+<text x="372.0" y="98.0" class="head">Начать</text>
+<rect x="570.0" y="63" width="210.0" height="58" fill="#edf2e8" stroke="#cfdbcd"/>
+<text x="582.0" y="98.0" class="head">Сделать ход</text>
+<rect x="780.0" y="63" width="210.0" height="58" fill="#edf2e8" stroke="#cfdbcd"/>
+<text x="792.0" y="98.0" class="head">Получить результат</text>
+<rect x="990.0" y="63" width="210.0" height="58" fill="#edf2e8" stroke="#cfdbcd"/>
+<text x="1002.0" y="98.0" class="head">Вернуться</text>
+<rect x="0" y="121" width="150" height="112" fill="#f5f8f0" stroke="#cfdbcd"/>
+<text x="12" y="171.0" class="head">MVP</text>
+<text x="12" y="195.0" class="head">Создатель</text>
+<rect x="150.0" y="121" width="210.0" height="112" fill="#f5f8f0" stroke="#cfdbcd"/>
+<text x="162.0" y="159.0" class="">US-001</text>
+<text x="162.0" y="183.0" class="">Создать комнату</text>
+<text x="162.0" y="207.0" class="">Передать код</text>
+<rect x="360.0" y="121" width="210.0" height="112" fill="#f5f8f0" stroke="#cfdbcd"/>
+<text x="372.0" y="159.0" class="">US-003</text>
+<text x="372.0" y="183.0" class="">Начать текущим</text>
+<text x="372.0" y="207.0" class="">составом</text>
+<rect x="570.0" y="121" width="210.0" height="112" fill="#f5f8f0" stroke="#cfdbcd"/>
+<text x="582.0" y="171.0" class="">Играет на общих</text>
+<text x="582.0" y="195.0" class="">правилах</text>
+<rect x="780.0" y="121" width="210.0" height="112" fill="#f5f8f0" stroke="#cfdbcd"/>
+<text x="792.0" y="171.0" class="">Получает общий</text>
+<text x="792.0" y="195.0" class="">результат</text>
+<rect x="990.0" y="121" width="210.0" height="112" fill="#f5f8f0" stroke="#cfdbcd"/>
+<text x="1002.0" y="171.0" class="">Возвращается</text>
+<text x="1002.0" y="195.0" class="">как участник</text>
+<rect x="0" y="233" width="150" height="124" fill="#f5f8f0" stroke="#cfdbcd"/>
+<text x="12" y="289.0" class="head">MVP</text>
+<text x="12" y="313.0" class="head">Участник</text>
+<rect x="150.0" y="233" width="210.0" height="124" fill="#f5f8f0" stroke="#cfdbcd"/>
+<text x="162.0" y="289.0" class="">US-002</text>
+<text x="162.0" y="313.0" class="">Войти по коду</text>
+<rect x="360.0" y="233" width="210.0" height="124" fill="#f5f8f0" stroke="#cfdbcd"/>
+<text x="372.0" y="289.0" class="">US-004</text>
+<text x="372.0" y="313.0" class="">Поле и все руки</text>
+<rect x="570.0" y="233" width="210.0" height="124" fill="#f5f8f0" stroke="#cfdbcd"/>
+<text x="582.0" y="265.0" class="">US-005 / 006 / 007</text>
+<text x="582.0" y="289.0" class="">Орк / близнецы /</text>
+<text x="582.0" y="313.0" class="">оружие</text>
+<text x="582.0" y="337.0" class="">US-008 Очередь, добор</text>
+<rect x="780.0" y="233" width="210.0" height="124" fill="#f5f8f0" stroke="#cfdbcd"/>
+<text x="792.0" y="289.0" class="">US-009 Очки</text>
+<text x="792.0" y="313.0" class="">US-010 Итог</text>
+<rect x="990.0" y="233" width="210.0" height="124" fill="#f5f8f0" stroke="#cfdbcd"/>
+<text x="1002.0" y="277.0" class="">US-011</text>
+<text x="1002.0" y="301.0" class="">Возврат после</text>
+<text x="1002.0" y="325.0" class="">обрыва</text>
+<line x1="0" y1="357" x2="1200" y2="357" stroke="#5c784b" stroke-width="4"/>
+<rect x="0" y="357" width="150" height="100" fill="#f4f5f3" stroke="#cfdbcd"/>
+<text x="12" y="413.0" class="head">Позже</text>
+<rect x="150.0" y="357" width="210.0" height="100" fill="#f4f5f3" stroke="#cfdbcd"/>
+<text x="162.0" y="401.0" class="">Подбор пока</text>
+<text x="162.0" y="425.0" class="">не нужен</text>
+<rect x="360.0" y="357" width="210.0" height="100" fill="#f4f5f3" stroke="#cfdbcd"/>
+<text x="372.0" y="401.0" class="">Hot seat и боты:</text>
+<text x="372.0" y="425.0" class="">локальный прототип</text>
+<rect x="570.0" y="357" width="210.0" height="100" fill="#f4f5f3" stroke="#cfdbcd"/>
+<text x="582.0" y="401.0" class="">Замена или</text>
+<text x="582.0" y="425.0" class="">исключение игрока</text>
+<rect x="780.0" y="357" width="210.0" height="100" fill="#f4f5f3" stroke="#cfdbcd"/>
+<text x="792.0" y="401.0" class="">Расширенные</text>
+<text x="792.0" y="425.0" class="">настройки</text>
+<rect x="990.0" y="357" width="210.0" height="100" fill="#f4f5f3" stroke="#cfdbcd"/>
+<text x="1002.0" y="401.0" class="">Решение при</text>
+<text x="1002.0" y="425.0" class="">долгом отсутствии</text>
+<rect x="0" y="457" width="150" height="88" fill="#f4f5f3" stroke="#cfdbcd"/>
+<text x="12" y="507.0" class="head">Вне MVP</text>
+<rect x="150.0" y="457" width="210.0" height="88" fill="#f4f5f3" stroke="#cfdbcd"/>
+<text x="162.0" y="507.0" class="">Публичный подбор</text>
+<rect x="360.0" y="457" width="210.0" height="88" fill="#f4f5f3" stroke="#cfdbcd"/>
+<text x="372.0" y="507.0" class="">Аккаунты с почтой</text>
+<rect x="570.0" y="457" width="210.0" height="88" fill="#f4f5f3" stroke="#cfdbcd"/>
+<text x="582.0" y="507.0" class="">Чат и магазин</text>
+<rect x="780.0" y="457" width="210.0" height="88" fill="#f4f5f3" stroke="#cfdbcd"/>
+<text x="792.0" y="507.0" class="">Рейтинг</text>
+<rect x="990.0" y="457" width="210.0" height="88" fill="#f4f5f3" stroke="#cfdbcd"/>
+<text x="1002.0" y="507.0" class="">Новые наборы правил</text>
+<text x="18" y="585" class="note">Зелёная линия — граница первой сетевой версии.</text>
+<text x="18" y="612" class="note">Создатель передаёт код участникам; они возвращают состав комнаты; старт передаёт всем начальное поле.</text>
+<text x="18" y="639" class="note">Полный цикл: комната → партия → сохранённый итог. Локальные режимы помогают проверить правила.</text></svg>
