@@ -1,0 +1,24 @@
+PASS deck: 124 unique / 114 orcs / 10 weapons; all mask frequencies
+PASS initial deal, open hands, random first player, immutable snapshot
+PASS invalid player, card, target and side leave all state unchanged
+PASS idempotency, conflicting command IDs, stale version
+PASS twins require side; chosen side is frozen on the territory
+PASS full own row rejects orcs without consuming turn
+PASS weapons work after all 20 orcs, even on own full row
+PASS repeated weapon consumes a separate card; future orcs stay disabled
+PASS full profile: combination count before rank, rank before lower group
+PASS only maximum profiles score; equal maximums all score
+PASS no legal moves: retain six, skip further draws, retain scoring eligibility
+PASS all final maximums win together; no strongest-combination tiebreak
+PASS same seed + commands reproduce the same match
+PASS local session emits one snapshot for each accepted unique move
+PASS 900 complete games (2/3/4 players): conservation, turn progress, scores, deck bound
+PASS save: initial deal, modes, Unicode names and archive isolation
+PASS save: replay preserves retry protection; rejected and duplicate moves are not saved
+PASS save: reject corrupt, truncated, oversized, unknown-format and invalid-history files
+PASS save files: replace, backup recovery, absent and unreadable saves, failed write
+PASS bot: take a winning closure, choose the useful twin side, do not mutate view
+PASS bot: useful weapon after 20 orcs; repeated weapon remains playable
+INFO mixed simulation winners (shared wins count for both): tactical=173/180; any random opponent=15/180
+PASS 180 tactical/mixed full games: legal moves, restore during play, same future draws and final results
+SUCCESS: 22 checks; 1080 full simulations (900 random + 180 tactical/mixed).
