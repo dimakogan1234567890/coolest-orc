@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="760" height="430" preserveAspectRatio="xMinYMin meet" viewBox="0 0 760 430" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="760" height="430"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-430)" style="clip-path: url(#clip)">
+		<g transform="">
+			<text x="12" y="410" style="font-family: Arial-Bold; font-size: 17px;fill: rgb(9%,17%,25%); stroke:none;" transform="translate(0,820) scale(1,-1)">D-06  Принять ход: запрос → правила → БД → ответ</text>
+			<text x="12" y="391" style="font-family: Arial; font-size: 10px;fill: rgb(32%,46%,58%); stroke:none;" transform="translate(0,782) scale(1,-1)">24.11.2026 · cp2-docs-draft · целевая архитектура, сервер ещё не реализован</text>
+			<text x="12" y="14" style="font-family: Arial; font-size: 9px;fill: rgb(32%,46%,58%); stroke:none;" transform="translate(0,28) scale(1,-1)">Пунктир - план; зелёный - существующий Core; серый - внешний участник/инструмент.</text>
+			<rect x="14" y="340" width="140" height="36" rx="9" ry="9" style="stroke: rgb(32%,46%,58%); stroke-linecap: butt; stroke-width: 1.3; fill: rgb(93%,95%,98%); fill-rule: evenodd; stroke-dasharray: 5, 3;"/>
+			<text x="26" y="354" style="font-family: Arial-Bold; font-size: 12px;fill: rgb(32%,46%,58%); stroke:none;" transform="translate(0,708) scale(1,-1)">Клиент</text>
+			<path d="M 84,337 L 84,48 Z" style="stroke: rgb(80%,83%,86%); stroke-linecap: butt; stroke-width: 1; stroke-dasharray: 3, 3;"/>
+			<rect x="213" y="340" width="140" height="36" rx="9" ry="9" style="stroke: rgb(32%,46%,58%); stroke-linecap: butt; stroke-width: 1.3; fill: rgb(93%,95%,98%); fill-rule: evenodd; stroke-dasharray: 5, 3;"/>
+			<text x="225" y="354" style="font-family: Arial-Bold; font-size: 12px;fill: rgb(32%,46%,58%); stroke:none;" transform="translate(0,708) scale(1,-1)">MatchService</text>
+			<path d="M 283,337 L 283,48 Z" style="stroke: rgb(80%,83%,86%); stroke-linecap: butt; stroke-width: 1; stroke-dasharray: 3, 3;"/>
+			<rect x="410" y="340" width="140" height="36" rx="9" ry="9" style="stroke: rgb(32%,46%,58%); stroke-linecap: butt; stroke-width: 1.3; fill: rgb(93%,95%,98%); fill-rule: evenodd; stroke-dasharray: 5, 3;"/>
+			<text x="422" y="354" style="font-family: Arial-Bold; font-size: 12px;fill: rgb(32%,46%,58%); stroke:none;" transform="translate(0,708) scale(1,-1)">Core</text>
+			<path d="M 480,337 L 480,48 Z" style="stroke: rgb(80%,83%,86%); stroke-linecap: butt; stroke-width: 1; stroke-dasharray: 3, 3;"/>
+			<rect x="607" y="340" width="140" height="36" rx="9" ry="9" style="stroke: rgb(32%,46%,58%); stroke-linecap: butt; stroke-width: 1.3; fill: rgb(93%,95%,98%); fill-rule: evenodd; stroke-dasharray: 5, 3;"/>
+			<text x="619" y="354" style="font-family: Arial-Bold; font-size: 12px;fill: rgb(32%,46%,58%); stroke:none;" transform="translate(0,708) scale(1,-1)">PostgreSQL</text>
+			<path d="M 677,337 L 677,48 Z" style="stroke: rgb(80%,83%,86%); stroke-linecap: butt; stroke-width: 1; stroke-dasharray: 3, 3;"/>
+			<path d="M 84,306 L 283,306 Z" style="stroke: rgb(32%,46%,58%); stroke-linecap: butt; stroke-width: 1.2;"/>
+			<polygon points="283 306, 276.6969 309.0448, 276.6969 302.9552" style="stroke: rgb(32%,46%,58%); stroke-linecap: butt; stroke-width: 1; fill: rgb(32%,46%,58%); fill-rule: evenodd;"/>
+			<rect x="119.68701171875" y="311" width="127.6259765625" height="13" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="122.68701171875" y="313" style="font-family: Arial; font-size: 10px;fill: rgb(9%,17%,25%); stroke:none;" transform="translate(0,626) scale(1,-1)">POST /moves: ID + версия</text>
+			<path d="M 283,260 L 677,260 Z" style="stroke: rgb(32%,46%,58%); stroke-linecap: butt; stroke-width: 1.2;"/>
+			<polygon points="677 260, 670.6969 263.0448, 670.6969 256.9552" style="stroke: rgb(32%,46%,58%); stroke-linecap: butt; stroke-width: 1; fill: rgb(32%,46%,58%); fill-rule: evenodd;"/>
+			<rect x="375.125" y="265" width="209.75" height="13" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="378.125" y="267" style="font-family: Arial; font-size: 10px;fill: rgb(9%,17%,25%); stroke:none;" transform="translate(0,534) scale(1,-1)">BEGIN; lock; проверить квитанцию / версию</text>
+			<path d="M 283,215 L 480,215 Z" style="stroke: rgb(32%,46%,58%); stroke-linecap: butt; stroke-width: 1.2;"/>
+			<polygon points="480 215, 473.6969 218.0448, 473.6969 211.9552" style="stroke: rgb(32%,46%,58%); stroke-linecap: butt; stroke-width: 1; fill: rgb(32%,46%,58%); fill-rule: evenodd;"/>
+			<rect x="345.56787109375" y="220" width="71.8642578125" height="13" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="348.56787109375" y="222" style="font-family: Arial; font-size: 10px;fill: rgb(9%,17%,25%); stroke:none;" transform="translate(0,444) scale(1,-1)">Restore + Play</text>
+			<path d="M 480,175 L 283,175 Z" style="stroke: rgb(32%,46%,58%); stroke-linecap: butt; stroke-width: 1.2;"/>
+			<polygon points="283 175, 289.3031 171.9552, 289.3031 178.0448" style="stroke: rgb(32%,46%,58%); stroke-linecap: butt; stroke-width: 1; fill: rgb(32%,46%,58%); fill-rule: evenodd;"/>
+			<rect x="334.41064453125" y="180" width="94.1787109375" height="13" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="337.41064453125" y="182" style="font-family: Arial; font-size: 10px;fill: rgb(9%,17%,25%); stroke:none;" transform="translate(0,364) scale(1,-1)">Архив и MatchView</text>
+			<path d="M 283,130 L 677,130 Z" style="stroke: rgb(32%,46%,58%); stroke-linecap: butt; stroke-width: 1.2;"/>
+			<polygon points="677 130, 670.6969 133.0448, 670.6969 126.9552" style="stroke: rgb(32%,46%,58%); stroke-linecap: butt; stroke-width: 1; fill: rgb(32%,46%,58%); fill-rule: evenodd;"/>
+			<rect x="378.337890625" y="135" width="203.32421875" height="13" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="381.337890625" y="137" style="font-family: Arial; font-size: 10px;fill: rgb(9%,17%,25%); stroke:none;" transform="translate(0,274) scale(1,-1)">UPDATE архив + INSERT receipt; COMMIT</text>
+			<path d="M 283,78 L 84,78 Z" style="stroke: rgb(32%,46%,58%); stroke-linecap: butt; stroke-width: 1.2;"/>
+			<polygon points="84 78, 90.30313 74.95524, 90.30313 81.04476" style="stroke: rgb(32%,46%,58%); stroke-linecap: butt; stroke-width: 1; fill: rgb(32%,46%,58%); fill-rule: evenodd;"/>
+			<rect x="125.5830078125" y="83" width="115.833984375" height="13" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="128.5830078125" y="85" style="font-family: Arial; font-size: 10px;fill: rgb(9%,17%,25%); stroke:none;" transform="translate(0,170) scale(1,-1)">200: новая версия поля</text>
+			<text x="20" y="33" style="font-family: Arial; font-size: 10px;fill: rgb(9%,17%,25%); stroke:none;" transform="translate(0,66) scale(1,-1)">До применения: токен → участник; ошибки не меняют состояние. ADR-001/002 · NFR-003/004/006.</text>
+		</g>
+	</g>
+</svg>

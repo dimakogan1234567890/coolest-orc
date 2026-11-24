@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="760" height="430" preserveAspectRatio="xMinYMin meet" viewBox="0 0 760 430" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="760" height="430"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-430)" style="clip-path: url(#clip)">
+		<g transform="">
+			<text x="12" y="410" style="font-family: Arial-Bold; font-size: 17px;fill: rgb(9%,17%,25%); stroke:none;" transform="translate(0,820) scale(1,-1)">D-02  Контейнеры · C4, уровень 2</text>
+			<text x="12" y="391" style="font-family: Arial; font-size: 10px;fill: rgb(32%,46%,58%); stroke:none;" transform="translate(0,782) scale(1,-1)">24.11.2026 · cp2-docs-draft · целевая архитектура, сервер ещё не реализован</text>
+			<text x="12" y="14" style="font-family: Arial; font-size: 9px;fill: rgb(32%,46%,58%); stroke:none;" transform="translate(0,28) scale(1,-1)">Пунктир - план; зелёный - существующий Core; серый - внешний участник/инструмент.</text>
+			<rect x="10" y="185" width="740" height="180" style="stroke: rgb(69%,74%,79%); stroke-linecap: butt; stroke-width: 0.8; fill: none; fill-rule: evenodd; stroke-dasharray: 3, 3;"/>
+			<text x="18" y="350" style="font-family: Arial; font-size: 10px;fill: rgb(32%,46%,58%); stroke:none;" transform="translate(0,700) scale(1,-1)">Граница программной системы</text>
+			<rect x="25" y="220" width="205" height="110" rx="9" ry="9" style="stroke: rgb(32%,46%,58%); stroke-linecap: butt; stroke-width: 1.3; fill: rgb(93%,95%,98%); fill-rule: evenodd; stroke-dasharray: 5, 3;"/>
+			<text x="37" y="308" style="font-family: Arial-Bold; font-size: 12px;fill: rgb(32%,46%,58%); stroke:none;" transform="translate(0,616) scale(1,-1)">Unity / Android</text>
+			<text x="37" y="290" style="font-family: Arial; font-size: 11px;fill: rgb(9%,17%,25%); stroke:none;" transform="translate(0,580) scale(1,-1)">C# + UI Toolkit</text>
+			<text x="37" y="276" style="font-family: Arial; font-size: 11px;fill: rgb(9%,17%,25%); stroke:none;" transform="translate(0,552) scale(1,-1)">Показ поля, команды, токен</text>
+			<text x="37" y="262" style="font-family: Arial; font-size: 11px;fill: rgb(9%,17%,25%); stroke:none;" transform="translate(0,524) scale(1,-1)">NFR-002/013</text>
+			<rect x="280" y="220" width="205" height="110" rx="9" ry="9" style="stroke: rgb(32%,46%,58%); stroke-linecap: butt; stroke-width: 1.3; fill: rgb(93%,95%,98%); fill-rule: evenodd; stroke-dasharray: 5, 3;"/>
+			<text x="292" y="308" style="font-family: Arial-Bold; font-size: 12px;fill: rgb(32%,46%,58%); stroke:none;" transform="translate(0,616) scale(1,-1)">Game API</text>
+			<text x="292" y="290" style="font-family: Arial; font-size: 11px;fill: rgb(9%,17%,25%); stroke:none;" transform="translate(0,580) scale(1,-1)">ASP.NET Core 10</text>
+			<text x="292" y="276" style="font-family: Arial; font-size: 11px;fill: rgb(9%,17%,25%); stroke:none;" transform="translate(0,552) scale(1,-1)">Комнаты и подтверждение ходов</text>
+			<text x="292" y="262" style="font-family: Arial; font-size: 11px;fill: rgb(9%,17%,25%); stroke:none;" transform="translate(0,524) scale(1,-1)">NFR-001/004/006/007</text>
+			<rect x="535" y="220" width="195" height="110" rx="9" ry="9" style="stroke: rgb(32%,46%,58%); stroke-linecap: butt; stroke-width: 1.3; fill: rgb(93%,95%,98%); fill-rule: evenodd; stroke-dasharray: 5, 3;"/>
+			<text x="547" y="308" style="font-family: Arial-Bold; font-size: 12px;fill: rgb(32%,46%,58%); stroke:none;" transform="translate(0,616) scale(1,-1)">PostgreSQL 17</text>
+			<text x="547" y="290" style="font-family: Arial; font-size: 11px;fill: rgb(9%,17%,25%); stroke:none;" transform="translate(0,580) scale(1,-1)">Участники, архивы, квитанции</text>
+			<text x="547" y="276" style="font-family: Arial; font-size: 11px;fill: rgb(9%,17%,25%); stroke:none;" transform="translate(0,552) scale(1,-1)">NFR-003/009</text>
+			<path d="M 230,272 L 280,272 Z" style="stroke: rgb(32%,46%,58%); stroke-linecap: butt; stroke-width: 1.2;"/>
+			<polygon points="280 272, 273.6969 275.0448, 273.6969 268.9552" style="stroke: rgb(32%,46%,58%); stroke-linecap: butt; stroke-width: 1; fill: rgb(32%,46%,58%); fill-rule: evenodd;"/>
+			<rect x="218.1083984375" y="199" width="73.783203125" height="13" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="221.1083984375" y="201" style="font-family: Arial; font-size: 10px;fill: rgb(9%,17%,25%); stroke:none;" transform="translate(0,402) scale(1,-1)">HTTPS / JSON</text>
+			<path d="M 485,272 L 535,272 Z" style="stroke: rgb(32%,46%,58%); stroke-linecap: butt; stroke-width: 1.2;"/>
+			<polygon points="535 272, 528.6969 275.0448, 528.6969 268.9552" style="stroke: rgb(32%,46%,58%); stroke-linecap: butt; stroke-width: 1; fill: rgb(32%,46%,58%); fill-rule: evenodd;"/>
+			<rect x="483.65771484375" y="199" width="52.6845703125" height="13" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="486.65771484375" y="201" style="font-family: Arial; font-size: 10px;fill: rgb(9%,17%,25%); stroke:none;" transform="translate(0,402) scale(1,-1)">SQL / TLS</text>
+			<rect x="25" y="52" width="340" height="96" rx="9" ry="9" style="stroke: rgb(18%,46%,39%); stroke-linecap: butt; stroke-width: 1.3; fill: rgb(92%,96%,94%); fill-rule: evenodd;"/>
+			<text x="37" y="126" style="font-family: Arial-Bold; font-size: 12px;fill: rgb(18%,46%,39%); stroke:none;" transform="translate(0,252) scale(1,-1)">Локальный режим уже написан</text>
+			<text x="37" y="108" style="font-family: Arial; font-size: 11px;fill: rgb(9%,17%,25%); stroke:none;" transform="translate(0,216) scale(1,-1)">LocalMatchSession → Core → MatchSaveStore</text>
+			<text x="37" y="94" style="font-family: Arial; font-size: 11px;fill: rgb(9%,17%,25%); stroke:none;" transform="translate(0,188) scale(1,-1)">Unity UI ещё не проверен в редакторе.</text>
+			<rect x="400" y="52" width="330" height="96" rx="9" ry="9" style="stroke: rgb(32%,46%,58%); stroke-linecap: butt; stroke-width: 1.3; fill: rgb(93%,95%,98%); fill-rule: evenodd; stroke-dasharray: 5, 3;"/>
+			<text x="412" y="126" style="font-family: Arial-Bold; font-size: 12px;fill: rgb(32%,46%,58%); stroke:none;" transform="translate(0,252) scale(1,-1)">Две зоны доверия</text>
+			<text x="412" y="108" style="font-family: Arial; font-size: 11px;fill: rgb(9%,17%,25%); stroke:none;" transform="translate(0,216) scale(1,-1)">Телефон не получает SQL и seed.</text>
+			<text x="412" y="94" style="font-family: Arial; font-size: 11px;fill: rgb(9%,17%,25%); stroke:none;" transform="translate(0,188) scale(1,-1)">API проверяет токен и сам определяет PlayerId.</text>
+		</g>
+	</g>
+</svg>

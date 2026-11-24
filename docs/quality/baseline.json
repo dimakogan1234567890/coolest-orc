@@ -1,0 +1,22 @@
+{
+  "version": "0.2.0",
+  "report_date": "2026-11-23",
+  "packaged_date": "2026-11-24",
+  "checks": 22,
+  "simulations": 1080,
+  "coverage": null,
+  "ci_run": null,
+  "server_run": false,
+  "source_sha256": {
+    "Assets/Orcs/Core/Cards.cs": "328eada717662497162105709fe075cfe44b9c61046fabafcb3dd0dfdec8f18f",
+    "Assets/Orcs/Core/GameEngine.cs": "afb28cb7c7865ba8f292f23628e1763679ad686162b56b80ec2759bbb1370c70",
+    "Assets/Orcs/Core/GameState.cs": "67bdba39434ec55164886b1065d5a86b71db23eefc881a21a43951f453522397",
+    "Assets/Orcs/Core/MatchArchive.cs": "93b838dae7ec4166477b47037e3aeadbe7e6dcb58c6cf9edeea00140260bf748",
+    "Assets/Orcs/Core/MatchSession.cs": "23b84462d3267a6d9f35f1d79c12473728b07c1e0ec231f5574d283ee5b093a4",
+    "Assets/Orcs/Core/MatchView.cs": "996274e983e88d7039acb397d990ef263c2e80ad3234dbcc99285bbd8de892ce",
+    "Assets/Orcs/Core/TacticalBot.cs": "54db878b56dd9069575033443247a5dcc0bed42134a110cb947dcef6a91fb62b",
+    "Assets/Orcs/Storage/MatchSaveStore.cs": "2110dfaeb4aa3e4b73e1e78ed40992ee2bc7a05a6ccd33506527050823f88292",
+    "Tests/CoreChecks.cs": "b5c7b5787d45fa7b4b22e4383d28a5cb931340d8930952d0aaeee1d500052af4",
+    "Tests/OfflineChecks.cs": "489f34fde6927fe2c4b1b7ecf729e72ad8364cdf9507668fc5c911f2ff1790b7"
+  }
+}

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="760" height="430" preserveAspectRatio="xMinYMin meet" viewBox="0 0 760 430" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="760" height="430"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-430)" style="clip-path: url(#clip)">
+		<g transform="">
+			<text x="12" y="410" style="font-family: Arial-Bold; font-size: 17px;fill: rgb(9%,17%,25%); stroke:none;" transform="translate(0,820) scale(1,-1)">D-05  Схема хранения · PostgreSQL, проект</text>
+			<text x="12" y="391" style="font-family: Arial; font-size: 10px;fill: rgb(32%,46%,58%); stroke:none;" transform="translate(0,782) scale(1,-1)">24.11.2026 · cp2-docs-draft · целевая архитектура, сервер ещё не реализован</text>
+			<text x="12" y="14" style="font-family: Arial; font-size: 9px;fill: rgb(32%,46%,58%); stroke:none;" transform="translate(0,28) scale(1,-1)">Пунктир - план; зелёный - существующий Core; серый - внешний участник/инструмент.</text>
+			<rect x="20" y="231" width="330" height="125" rx="9" ry="9" style="stroke: rgb(32%,46%,58%); stroke-linecap: butt; stroke-width: 1.3; fill: rgb(93%,95%,98%); fill-rule: evenodd; stroke-dasharray: 5, 3;"/>
+			<text x="32" y="334" style="font-family: Arial-Bold; font-size: 12px;fill: rgb(32%,46%,58%); stroke:none;" transform="translate(0,668) scale(1,-1)">rooms</text>
+			<text x="32" y="316" style="font-family: Arial; font-size: 11px;fill: rgb(9%,17%,25%); stroke:none;" transform="translate(0,632) scale(1,-1)">PK room_id; UNIQUE code</text>
+			<text x="32" y="302" style="font-family: Arial; font-size: 11px;fill: rgb(9%,17%,25%); stroke:none;" transform="translate(0,604) scale(1,-1)">host_member_id; status; version</text>
+			<text x="32" y="288" style="font-family: Arial; font-size: 11px;fill: rgb(9%,17%,25%); stroke:none;" transform="translate(0,576) scale(1,-1)">Состав 1-4, старт 2-4; host из своей комнаты</text>
+			<rect x="410" y="231" width="330" height="125" rx="9" ry="9" style="stroke: rgb(32%,46%,58%); stroke-linecap: butt; stroke-width: 1.3; fill: rgb(93%,95%,98%); fill-rule: evenodd; stroke-dasharray: 5, 3;"/>
+			<text x="422" y="334" style="font-family: Arial-Bold; font-size: 12px;fill: rgb(32%,46%,58%); stroke:none;" transform="translate(0,668) scale(1,-1)">members</text>
+			<text x="422" y="316" style="font-family: Arial; font-size: 11px;fill: rgb(9%,17%,25%); stroke:none;" transform="translate(0,632) scale(1,-1)">PK member_id; FK room_id</text>
+			<text x="422" y="302" style="font-family: Arial; font-size: 11px;fill: rgb(9%,17%,25%); stroke:none;" transform="translate(0,604) scale(1,-1)">seat; name; token_hash UNIQUE</text>
+			<text x="422" y="288" style="font-family: Arial; font-size: 11px;fill: rgb(9%,17%,25%); stroke:none;" transform="translate(0,576) scale(1,-1)">UNIQUE(room_id, seat), seat 0-3</text>
+			<path d="M 350,286 L 410,286 Z" style="stroke: rgb(32%,46%,58%); stroke-linecap: butt; stroke-width: 1.2;"/>
+			<polygon points="410 286, 403.6969 289.0448, 403.6969 282.9552" style="stroke: rgb(32%,46%,58%); stroke-linecap: butt; stroke-width: 1; fill: rgb(32%,46%,58%); fill-rule: evenodd;"/>
+			<rect x="361.7119140625" y="297" width="36.576171875" height="13" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="364.7119140625" y="299" style="font-family: Arial; font-size: 10px;fill: rgb(9%,17%,25%); stroke:none;" transform="translate(0,598) scale(1,-1)">1 : 1..4</text>
+			<rect x="20" y="56" width="330" height="125" rx="9" ry="9" style="stroke: rgb(32%,46%,58%); stroke-linecap: butt; stroke-width: 1.3; fill: rgb(93%,95%,98%); fill-rule: evenodd; stroke-dasharray: 5, 3;"/>
+			<text x="32" y="159" style="font-family: Arial-Bold; font-size: 12px;fill: rgb(32%,46%,58%); stroke:none;" transform="translate(0,318) scale(1,-1)">matches</text>
+			<text x="32" y="141" style="font-family: Arial; font-size: 11px;fill: rgb(9%,17%,25%); stroke:none;" transform="translate(0,282) scale(1,-1)">PK match_id; FK room_id UNIQUE</text>
+			<text x="32" y="127" style="font-family: Arial; font-size: 11px;fill: rgb(9%,17%,25%); stroke:none;" transform="translate(0,254) scale(1,-1)">version; rules_version; status</text>
+			<text x="32" y="113" style="font-family: Arial; font-size: 11px;fill: rgb(9%,17%,25%); stroke:none;" transform="translate(0,226) scale(1,-1)">archive JSONB: initialDeal, names, commands ≤90</text>
+			<rect x="410" y="56" width="330" height="125" rx="9" ry="9" style="stroke: rgb(32%,46%,58%); stroke-linecap: butt; stroke-width: 1.3; fill: rgb(93%,95%,98%); fill-rule: evenodd; stroke-dasharray: 5, 3;"/>
+			<text x="422" y="159" style="font-family: Arial-Bold; font-size: 12px;fill: rgb(32%,46%,58%); stroke:none;" transform="translate(0,318) scale(1,-1)">receipts</text>
+			<text x="422" y="141" style="font-family: Arial; font-size: 11px;fill: rgb(9%,17%,25%); stroke:none;" transform="translate(0,282) scale(1,-1)">PK(scope_key, command_id)</text>
+			<text x="422" y="127" style="font-family: Arial; font-size: 11px;fill: rgb(9%,17%,25%); stroke:none;" transform="translate(0,254) scale(1,-1)">request_hash; response_status</text>
+			<text x="422" y="113" style="font-family: Arial; font-size: 11px;fill: rgb(9%,17%,25%); stroke:none;" transform="translate(0,226) scale(1,-1)">response_encrypted; created_at</text>
+			<path d="M 185,231 L 185,181 Z" style="stroke: rgb(32%,46%,58%); stroke-linecap: butt; stroke-width: 1.2;"/>
+			<polygon points="185 181, 188.0448 187.3031, 181.9552 187.3031" style="stroke: rgb(32%,46%,58%); stroke-linecap: butt; stroke-width: 1; fill: rgb(32%,46%,58%); fill-rule: evenodd;"/>
+			<rect x="166.7119140625" y="202" width="36.576171875" height="13" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="169.7119140625" y="204" style="font-family: Arial; font-size: 10px;fill: rgb(9%,17%,25%); stroke:none;" transform="translate(0,408) scale(1,-1)">1 : 0..1</text>
+			<path d="M 350,114 L 410,114 Z" style="stroke: rgb(32%,46%,58%); stroke-linecap: butt; stroke-width: 1.2; stroke-dasharray: 4, 3;"/>
+			<polygon points="410 114, 403.6969 117.0448, 403.6969 110.9552" style="stroke: rgb(32%,46%,58%); stroke-linecap: butt; stroke-width: 1; fill: rgb(32%,46%,58%); fill-rule: evenodd;"/>
+			<rect x="352.3564453125" y="125" width="55.287109375" height="13" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="355.3564453125" y="127" style="font-family: Arial; font-size: 10px;fill: rgb(9%,17%,25%); stroke:none;" transform="translate(0,254) scale(1,-1)">Квитанции</text>
+			<text x="410" y="205" style="font-family: Arial; font-size: 10px;fill: rgb(9%,17%,25%); stroke:none;" transform="translate(0,410) scale(1,-1)">Scope: операция + владелец + агрегат.</text>
+			<text x="20" y="35" style="font-family: Arial; font-size: 10px;fill: rgb(9%,17%,25%); stroke:none;" transform="translate(0,70) scale(1,-1)">ADR-002 · NFR-003/004/006/009 · JSONB не выдаётся клиенту; миграции ещё не написаны.</text>
+		</g>
+	</g>
+</svg>

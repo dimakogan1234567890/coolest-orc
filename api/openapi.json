@@ -1,0 +1,1905 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Самый крутой орк — проект API",
+    "version": "0.1.0-draft",
+    "description": "Документы КТ-2 от 24.11.2026. Сервис не реализован. /v1 — версия интерфейса; version в теле — версия состояния. Тело команды максимум 16 КиБ."
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8080",
+      "description": "План локального демонстрационного адреса; сервера пока нет. Между устройствами — HTTPS."
+    }
+  ],
+  "paths": {
+    "/v1/rooms": {
+      "post": {
+        "operationId": "createRoom",
+        "summary": "Создать комнату; X-Request-Key защищает повтор первичного ответа.",
+        "description": "ПРОЕКТ КОНТРАКТА. Обработчик пока не реализован.",
+        "security": [
+          {
+            "RegistrationKey": []
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Успех после фиксации данных.",
+            "headers": {
+              "X-Request-Id": {
+                "description": "Идентификатор для журнала, без секретов.",
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              },
+              "Idempotency-Replayed": {
+                "description": "true — возвращена ранее сохранённая квитанция.",
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Registration"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "InvalidRequest: JSON, обязательные поля или схема запроса неверны.",
+            "headers": {
+              "X-Request-Id": {
+                "description": "Идентификатор для журнала, без секретов.",
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized: токен отсутствует или неверен.",
+            "headers": {
+              "X-Request-Id": {
+                "description": "Идентификатор для журнала, без секретов.",
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden: старт не создателем.",
+            "headers": {
+              "X-Request-Id": {
+                "description": "Идентификатор для журнала, без секретов.",
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "RoomNotFound / MatchNotFound: нет ресурса или он не принадлежит участнику.",
+            "headers": {
+              "X-Request-Id": {
+                "description": "Идентификатор для журнала, без секретов.",
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Конфликт состояния/версии или IdempotencyConflict; состояние не меняется.",
+            "headers": {
+              "X-Request-Id": {
+                "description": "Идентификатор для журнала, без секретов.",
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "RequestTooLarge: тело больше 16384 байт.",
+            "headers": {
+              "X-Request-Id": {
+                "description": "Идентификатор для журнала, без секретов.",
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "InvalidName / InvalidSide / InvalidCommand: неверные данные действия.",
+            "headers": {
+              "X-Request-Id": {
+                "description": "Идентификатор для журнала, без секретов.",
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "RateLimited: ограничение запросов/очереди.",
+            "headers": {
+              "X-Request-Id": {
+                "description": "Идентификатор для журнала, без секретов.",
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              },
+              "Retry-After": {
+                "description": "Задержка в секундах.",
+                "schema": {
+                  "type": "integer",
+                  "minimum": 1
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Unavailable: БД или приложение не готовы; исход команды выяснять повтором её ID.",
+            "headers": {
+              "X-Request-Id": {
+                "description": "Идентификатор для журнала, без секретов.",
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              },
+              "Retry-After": {
+                "description": "Задержка в секундах.",
+                "schema": {
+                  "type": "integer",
+                  "minimum": 1
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateRoom"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/rooms/join": {
+      "post": {
+        "operationId": "joinRoom",
+        "summary": "Войти по коду; повтор не создаёт второго участника.",
+        "description": "ПРОЕКТ КОНТРАКТА. Обработчик пока не реализован.",
+        "security": [
+          {
+            "RegistrationKey": []
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Успех после фиксации данных.",
+            "headers": {
+              "X-Request-Id": {
+                "description": "Идентификатор для журнала, без секретов.",
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              },
+              "Idempotency-Replayed": {
+                "description": "true — возвращена ранее сохранённая квитанция.",
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Registration"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "InvalidRequest: JSON, обязательные поля или схема запроса неверны.",
+            "headers": {
+              "X-Request-Id": {
+                "description": "Идентификатор для журнала, без секретов.",
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized: токен отсутствует или неверен.",
+            "headers": {
+              "X-Request-Id": {
+                "description": "Идентификатор для журнала, без секретов.",
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden: старт не создателем.",
+            "headers": {
+              "X-Request-Id": {
+                "description": "Идентификатор для журнала, без секретов.",
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "RoomNotFound / MatchNotFound: нет ресурса или он не принадлежит участнику.",
+            "headers": {
+              "X-Request-Id": {
+                "description": "Идентификатор для журнала, без секретов.",
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Конфликт состояния/версии или IdempotencyConflict; состояние не меняется.",
+            "headers": {
+              "X-Request-Id": {
+                "description": "Идентификатор для журнала, без секретов.",
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "RequestTooLarge: тело больше 16384 байт.",
+            "headers": {
+              "X-Request-Id": {
+                "description": "Идентификатор для журнала, без секретов.",
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "InvalidName / InvalidSide / InvalidCommand: неверные данные действия.",
+            "headers": {
+              "X-Request-Id": {
+                "description": "Идентификатор для журнала, без секретов.",
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "RateLimited: ограничение запросов/очереди.",
+            "headers": {
+              "X-Request-Id": {
+                "description": "Идентификатор для журнала, без секретов.",
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              },
+              "Retry-After": {
+                "description": "Задержка в секундах.",
+                "schema": {
+                  "type": "integer",
+                  "minimum": 1
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Unavailable: БД или приложение не готовы; исход команды выяснять повтором её ID.",
+            "headers": {
+              "X-Request-Id": {
+                "description": "Идентификатор для журнала, без секретов.",
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              },
+              "Retry-After": {
+                "description": "Задержка в секундах.",
+                "schema": {
+                  "type": "integer",
+                  "minimum": 1
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/JoinRoom"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/rooms/{roomId}": {
+      "get": {
+        "operationId": "getRoom",
+        "summary": "Прочитать состав и версию своей комнаты.",
+        "description": "ПРОЕКТ КОНТРАКТА. Обработчик пока не реализован.",
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Результат чтения.",
+            "headers": {
+              "X-Request-Id": {
+                "description": "Идентификатор для журнала, без секретов.",
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Room"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "InvalidRequest: JSON, обязательные поля или схема запроса неверны.",
+            "headers": {
+              "X-Request-Id": {
+                "description": "Идентификатор для журнала, без секретов.",
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized: токен отсутствует или неверен.",
+            "headers": {
+              "X-Request-Id": {
+                "description": "Идентификатор для журнала, без секретов.",
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "RoomNotFound / MatchNotFound: нет ресурса или он не принадлежит участнику.",
+            "headers": {
+              "X-Request-Id": {
+                "description": "Идентификатор для журнала, без секретов.",
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "RateLimited: ограничение запросов/очереди.",
+            "headers": {
+              "X-Request-Id": {
+                "description": "Идентификатор для журнала, без секретов.",
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              },
+              "Retry-After": {
+                "description": "Задержка в секундах.",
+                "schema": {
+                  "type": "integer",
+                  "minimum": 1
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Unavailable: БД или приложение не готовы; исход команды выяснять повтором её ID.",
+            "headers": {
+              "X-Request-Id": {
+                "description": "Идентификатор для журнала, без секретов.",
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              },
+              "Retry-After": {
+                "description": "Задержка в секундах.",
+                "schema": {
+                  "type": "integer",
+                  "minimum": 1
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "roomId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ]
+      }
+    },
+    "/v1/rooms/{roomId}/start": {
+      "post": {
+        "operationId": "startMatch",
+        "summary": "Создатель начинает текущим составом 2–4.",
+        "description": "ПРОЕКТ КОНТРАКТА. Обработчик пока не реализован.",
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Успех после фиксации данных.",
+            "headers": {
+              "X-Request-Id": {
+                "description": "Идентификатор для журнала, без секретов.",
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              },
+              "Idempotency-Replayed": {
+                "description": "true — возвращена ранее сохранённая квитанция.",
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MatchView"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "InvalidRequest: JSON, обязательные поля или схема запроса неверны.",
+            "headers": {
+              "X-Request-Id": {
+                "description": "Идентификатор для журнала, без секретов.",
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized: токен отсутствует или неверен.",
+            "headers": {
+              "X-Request-Id": {
+                "description": "Идентификатор для журнала, без секретов.",
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden: старт не создателем.",
+            "headers": {
+              "X-Request-Id": {
+                "description": "Идентификатор для журнала, без секретов.",
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "RoomNotFound / MatchNotFound: нет ресурса или он не принадлежит участнику.",
+            "headers": {
+              "X-Request-Id": {
+                "description": "Идентификатор для журнала, без секретов.",
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Конфликт состояния/версии или IdempotencyConflict; состояние не меняется.",
+            "headers": {
+              "X-Request-Id": {
+                "description": "Идентификатор для журнала, без секретов.",
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "RequestTooLarge: тело больше 16384 байт.",
+            "headers": {
+              "X-Request-Id": {
+                "description": "Идентификатор для журнала, без секретов.",
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "InvalidName / InvalidSide / InvalidCommand: неверные данные действия.",
+            "headers": {
+              "X-Request-Id": {
+                "description": "Идентификатор для журнала, без секретов.",
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "RateLimited: ограничение запросов/очереди.",
+            "headers": {
+              "X-Request-Id": {
+                "description": "Идентификатор для журнала, без секретов.",
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              },
+              "Retry-After": {
+                "description": "Задержка в секундах.",
+                "schema": {
+                  "type": "integer",
+                  "minimum": 1
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Unavailable: БД или приложение не готовы; исход команды выяснять повтором её ID.",
+            "headers": {
+              "X-Request-Id": {
+                "description": "Идентификатор для журнала, без секретов.",
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              },
+              "Retry-After": {
+                "description": "Задержка в секундах.",
+                "schema": {
+                  "type": "integer",
+                  "minimum": 1
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "roomId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StartMatch"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/matches/{matchId}": {
+      "get": {
+        "operationId": "getMatch",
+        "summary": "Поле, восстановление или итог своей партии.",
+        "description": "ПРОЕКТ КОНТРАКТА. Обработчик пока не реализован.",
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Результат чтения.",
+            "headers": {
+              "X-Request-Id": {
+                "description": "Идентификатор для журнала, без секретов.",
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MatchView"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "InvalidRequest: JSON, обязательные поля или схема запроса неверны.",
+            "headers": {
+              "X-Request-Id": {
+                "description": "Идентификатор для журнала, без секретов.",
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized: токен отсутствует или неверен.",
+            "headers": {
+              "X-Request-Id": {
+                "description": "Идентификатор для журнала, без секретов.",
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "RoomNotFound / MatchNotFound: нет ресурса или он не принадлежит участнику.",
+            "headers": {
+              "X-Request-Id": {
+                "description": "Идентификатор для журнала, без секретов.",
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "RateLimited: ограничение запросов/очереди.",
+            "headers": {
+              "X-Request-Id": {
+                "description": "Идентификатор для журнала, без секретов.",
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              },
+              "Retry-After": {
+                "description": "Задержка в секундах.",
+                "schema": {
+                  "type": "integer",
+                  "minimum": 1
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Unavailable: БД или приложение не готовы; исход команды выяснять повтором её ID.",
+            "headers": {
+              "X-Request-Id": {
+                "description": "Идентификатор для журнала, без секретов.",
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              },
+              "Retry-After": {
+                "description": "Задержка в секундах.",
+                "schema": {
+                  "type": "integer",
+                  "minimum": 1
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "matchId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ]
+      }
+    },
+    "/v1/matches/{matchId}/moves": {
+      "post": {
+        "operationId": "playMove",
+        "summary": "Один ход: орк, близнецы или супероружие.",
+        "description": "ПРОЕКТ КОНТРАКТА. Обработчик пока не реализован.",
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Успех после фиксации данных.",
+            "headers": {
+              "X-Request-Id": {
+                "description": "Идентификатор для журнала, без секретов.",
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              },
+              "Idempotency-Replayed": {
+                "description": "true — возвращена ранее сохранённая квитанция.",
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MatchView"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "InvalidRequest: JSON, обязательные поля или схема запроса неверны.",
+            "headers": {
+              "X-Request-Id": {
+                "description": "Идентификатор для журнала, без секретов.",
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized: токен отсутствует или неверен.",
+            "headers": {
+              "X-Request-Id": {
+                "description": "Идентификатор для журнала, без секретов.",
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden: старт не создателем.",
+            "headers": {
+              "X-Request-Id": {
+                "description": "Идентификатор для журнала, без секретов.",
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "RoomNotFound / MatchNotFound: нет ресурса или он не принадлежит участнику.",
+            "headers": {
+              "X-Request-Id": {
+                "description": "Идентификатор для журнала, без секретов.",
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Конфликт состояния/версии или IdempotencyConflict; состояние не меняется.",
+            "headers": {
+              "X-Request-Id": {
+                "description": "Идентификатор для журнала, без секретов.",
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "RequestTooLarge: тело больше 16384 байт.",
+            "headers": {
+              "X-Request-Id": {
+                "description": "Идентификатор для журнала, без секретов.",
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "InvalidName / InvalidSide / InvalidCommand: неверные данные действия.",
+            "headers": {
+              "X-Request-Id": {
+                "description": "Идентификатор для журнала, без секретов.",
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "RateLimited: ограничение запросов/очереди.",
+            "headers": {
+              "X-Request-Id": {
+                "description": "Идентификатор для журнала, без секретов.",
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              },
+              "Retry-After": {
+                "description": "Задержка в секундах.",
+                "schema": {
+                  "type": "integer",
+                  "minimum": 1
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Unavailable: БД или приложение не готовы; исход команды выяснять повтором её ID.",
+            "headers": {
+              "X-Request-Id": {
+                "description": "Идентификатор для журнала, без секретов.",
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              },
+              "Retry-After": {
+                "description": "Задержка в секундах.",
+                "schema": {
+                  "type": "integer",
+                  "minimum": 1
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "matchId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PlayMove"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/health": {
+      "get": {
+        "operationId": "health",
+        "summary": "Жив ли процесс.",
+        "description": "ПРОЕКТ КОНТРАКТА. Обработчик пока не реализован.",
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "Результат чтения.",
+            "headers": {
+              "X-Request-Id": {
+                "description": "Идентификатор для журнала, без секретов.",
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Health"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Unavailable: БД или приложение не готовы; исход команды выяснять повтором её ID.",
+            "headers": {
+              "X-Request-Id": {
+                "description": "Идентификатор для журнала, без секретов.",
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              },
+              "Retry-After": {
+                "description": "Задержка в секундах.",
+                "schema": {
+                  "type": "integer",
+                  "minimum": 1
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "parameters": []
+      }
+    },
+    "/ready": {
+      "get": {
+        "operationId": "ready",
+        "summary": "Доступны ли БД и нужная миграция.",
+        "description": "ПРОЕКТ КОНТРАКТА. Обработчик пока не реализован.",
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "Результат чтения.",
+            "headers": {
+              "X-Request-Id": {
+                "description": "Идентификатор для журнала, без секретов.",
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Health"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Unavailable: БД или приложение не готовы; исход команды выяснять повтором её ID.",
+            "headers": {
+              "X-Request-Id": {
+                "description": "Идентификатор для журнала, без секретов.",
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              },
+              "Retry-After": {
+                "description": "Задержка в секундах.",
+                "schema": {
+                  "type": "integer",
+                  "minimum": 1
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "parameters": []
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "BearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "opaque random 256-bit token"
+      },
+      "RegistrationKey": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-Request-Key",
+        "description": "Секрет первичного запроса: 32 случайных байта в base64url, 43 символа. Хранить до получения ответа; при повторе тот же ключ и commandId. Не логировать."
+      }
+    },
+    "schemas": {
+      "CreateRoom": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "commandId",
+          "displayName"
+        ],
+        "properties": {
+          "commandId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "displayName": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 24
+          }
+        }
+      },
+      "JoinRoom": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "commandId",
+          "displayName",
+          "roomCode"
+        ],
+        "properties": {
+          "commandId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "displayName": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 24
+          },
+          "roomCode": {
+            "type": "string",
+            "pattern": "^[A-Z2-9]{6}$"
+          }
+        }
+      },
+      "StartMatch": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "commandId",
+          "expectedVersion"
+        ],
+        "properties": {
+          "commandId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "expectedVersion": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      },
+      "PlayMove": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "commandId",
+          "expectedVersion",
+          "cardId",
+          "territoryId",
+          "side"
+        ],
+        "properties": {
+          "commandId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "expectedVersion": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "cardId": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 123
+          },
+          "territoryId": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 4
+          },
+          "side": {
+            "type": "integer",
+            "enum": [
+              0,
+              1,
+              2
+            ],
+            "description": "0 — оружие; 1 — орк / первая сторона; 2 — вторая сторона близнецов."
+          }
+        }
+      },
+      "Member": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "memberId",
+          "seat",
+          "displayName"
+        ],
+        "properties": {
+          "memberId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "seat": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 3
+          },
+          "displayName": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 24
+          }
+        }
+      },
+      "Room": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "roomId",
+          "roomCode",
+          "version",
+          "status",
+          "hostMemberId",
+          "members",
+          "matchId"
+        ],
+        "properties": {
+          "roomId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "roomCode": {
+            "type": "string",
+            "pattern": "^[A-Z2-9]{6}$"
+          },
+          "version": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "lobby",
+              "playing",
+              "finished"
+            ]
+          },
+          "hostMemberId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "members": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Member"
+            },
+            "minItems": 1,
+            "maxItems": 4
+          },
+          "matchId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          }
+        }
+      },
+      "Registration": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "memberId",
+          "token",
+          "room"
+        ],
+        "properties": {
+          "memberId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "token": {
+            "type": "string",
+            "minLength": 43,
+            "maxLength": 43,
+            "pattern": "^[A-Za-z0-9_-]{43}$"
+          },
+          "room": {
+            "$ref": "#/components/schemas/Room"
+          }
+        }
+      },
+      "Card": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "kind",
+          "front",
+          "back",
+          "weapon"
+        ],
+        "properties": {
+          "id": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 123
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "orc",
+              "twins",
+              "superweapon"
+            ]
+          },
+          "front": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 31
+          },
+          "back": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 31
+          },
+          "weapon": {
+            "type": "integer",
+            "enum": [
+              0,
+              1,
+              2,
+              4,
+              8,
+              16
+            ]
+          }
+        }
+      },
+      "PlacedCard": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "card",
+          "side"
+        ],
+        "properties": {
+          "card": {
+            "$ref": "#/components/schemas/Card"
+          },
+          "side": {
+            "type": "integer",
+            "enum": [
+              1,
+              2
+            ]
+          }
+        }
+      },
+      "PlayerView": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "seat",
+          "displayName",
+          "score",
+          "waitingForEnd",
+          "hand"
+        ],
+        "properties": {
+          "seat": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 3
+          },
+          "displayName": {
+            "type": "string"
+          },
+          "score": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 5
+          },
+          "waitingForEnd": {
+            "type": "boolean"
+          },
+          "hand": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Card"
+            },
+            "minItems": 5,
+            "maxItems": 6
+          }
+        }
+      },
+      "Formation": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "playerSeat",
+          "cards",
+          "combinationCounts"
+        ],
+        "properties": {
+          "playerSeat": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 3
+          },
+          "cards": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PlacedCard"
+            },
+            "minItems": 0,
+            "maxItems": 4
+          },
+          "combinationCounts": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 4
+            },
+            "minItems": 5,
+            "maxItems": 5
+          }
+        }
+      },
+      "Territory": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "closed",
+          "disabledMask",
+          "formations",
+          "winnerSeats"
+        ],
+        "properties": {
+          "id": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 4
+          },
+          "closed": {
+            "type": "boolean"
+          },
+          "disabledMask": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 31
+          },
+          "formations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Formation"
+            },
+            "minItems": 2,
+            "maxItems": 4
+          },
+          "winnerSeats": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 3
+            },
+            "minItems": 0,
+            "maxItems": 4
+          }
+        }
+      },
+      "MatchView": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "matchId",
+          "version",
+          "finished",
+          "activePlayerSeat",
+          "deckCount",
+          "discardCount",
+          "players",
+          "territories",
+          "winnerSeats"
+        ],
+        "properties": {
+          "matchId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "version": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "finished": {
+            "type": "boolean"
+          },
+          "activePlayerSeat": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 3,
+            "nullable": true
+          },
+          "deckCount": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 124
+          },
+          "discardCount": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 10
+          },
+          "players": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PlayerView"
+            },
+            "minItems": 2,
+            "maxItems": 4
+          },
+          "territories": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Territory"
+            },
+            "minItems": 5,
+            "maxItems": 5
+          },
+          "winnerSeats": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 3
+            },
+            "minItems": 0,
+            "maxItems": 4
+          }
+        }
+      },
+      "Error": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "code",
+          "message",
+          "requestId"
+        ],
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "requestId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "currentVersion": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      },
+      "Health": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "status"
+        ],
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "ok"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

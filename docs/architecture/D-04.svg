@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="760" height="430" preserveAspectRatio="xMinYMin meet" viewBox="0 0 760 430" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="760" height="430"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-430)" style="clip-path: url(#clip)">
+		<g transform="">
+			<text x="12" y="410" style="font-family: Arial-Bold; font-size: 17px;fill: rgb(9%,17%,25%); stroke:none;" transform="translate(0,820) scale(1,-1)">D-04  План CI/CD · выполнение пока отсутствует</text>
+			<text x="12" y="391" style="font-family: Arial; font-size: 10px;fill: rgb(32%,46%,58%); stroke:none;" transform="translate(0,782) scale(1,-1)">24.11.2026 · cp2-docs-draft · целевая архитектура, сервер ещё не реализован</text>
+			<text x="12" y="14" style="font-family: Arial; font-size: 9px;fill: rgb(32%,46%,58%); stroke:none;" transform="translate(0,28) scale(1,-1)">Пунктир - план; зелёный - существующий Core; серый - внешний участник/инструмент.</text>
+			<rect x="23" y="243" width="210" height="102" rx="9" ry="9" style="stroke: rgb(45%,50%,55%); stroke-linecap: butt; stroke-width: 1.3; fill: rgb(95%,95%,96%); fill-rule: evenodd;"/>
+			<text x="35" y="323" style="font-family: Arial-Bold; font-size: 12px;fill: rgb(45%,50%,55%); stroke:none;" transform="translate(0,646) scale(1,-1)">PR / push</text>
+			<text x="35" y="305" style="font-family: Arial; font-size: 11px;fill: rgb(9%,17%,25%); stroke:none;" transform="translate(0,610) scale(1,-1)">Чистый checkout</text>
+			<text x="35" y="291" style="font-family: Arial; font-size: 11px;fill: rgb(9%,17%,25%); stroke:none;" transform="translate(0,582) scale(1,-1)">SDK + lock-файл</text>
+			<text x="35" y="277" style="font-family: Arial; font-size: 11px;fill: rgb(9%,17%,25%); stroke:none;" transform="translate(0,554) scale(1,-1)">NFR-010/012</text>
+			<rect x="276" y="243" width="210" height="102" rx="9" ry="9" style="stroke: rgb(32%,46%,58%); stroke-linecap: butt; stroke-width: 1.3; fill: rgb(93%,95%,98%); fill-rule: evenodd; stroke-dasharray: 5, 3;"/>
+			<text x="288" y="323" style="font-family: Arial-Bold; font-size: 12px;fill: rgb(32%,46%,58%); stroke:none;" transform="translate(0,646) scale(1,-1)">КТ-2: статический контроль</text>
+			<text x="288" y="305" style="font-family: Arial; font-size: 11px;fill: rgb(9%,17%,25%); stroke:none;" transform="translate(0,610) scale(1,-1)">Формат, OpenAPI, компиляция</text>
+			<text x="288" y="291" style="font-family: Arial; font-size: 11px;fill: rgb(9%,17%,25%); stroke:none;" transform="translate(0,582) scale(1,-1)">Поиск секретов</text>
+			<text x="288" y="277" style="font-family: Arial; font-size: 11px;fill: rgb(9%,17%,25%); stroke:none;" transform="translate(0,554) scale(1,-1)">NFR-008/012</text>
+			<rect x="529" y="243" width="210" height="102" rx="9" ry="9" style="stroke: rgb(32%,46%,58%); stroke-linecap: butt; stroke-width: 1.3; fill: rgb(93%,95%,98%); fill-rule: evenodd; stroke-dasharray: 5, 3;"/>
+			<text x="541" y="323" style="font-family: Arial-Bold; font-size: 12px;fill: rgb(32%,46%,58%); stroke:none;" transform="translate(0,646) scale(1,-1)">КТ-2: тесты и сборка</text>
+			<text x="541" y="305" style="font-family: Arial; font-size: 11px;fill: rgb(9%,17%,25%); stroke:none;" transform="translate(0,610) scale(1,-1)">Unit + integration, образ</text>
+			<text x="541" y="291" style="font-family: Arial; font-size: 11px;fill: rgb(9%,17%,25%); stroke:none;" transform="translate(0,582) scale(1,-1)">Логи, исходное покрытие</text>
+			<text x="541" y="277" style="font-family: Arial; font-size: 11px;fill: rgb(9%,17%,25%); stroke:none;" transform="translate(0,554) scale(1,-1)">Любая ошибка → failed</text>
+			<path d="M 233,292 L 276,292 Z" style="stroke: rgb(32%,46%,58%); stroke-linecap: butt; stroke-width: 1.2;"/>
+			<polygon points="276 292, 269.6969 295.0448, 269.6969 288.9552" style="stroke: rgb(32%,46%,58%); stroke-linecap: butt; stroke-width: 1; fill: rgb(32%,46%,58%); fill-rule: evenodd;"/>
+			<rect x="242.88916015625" y="302" width="23.2216796875" height="13" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="245.88916015625" y="304" style="font-family: Arial; font-size: 10px;fill: rgb(9%,17%,25%); stroke:none;" transform="translate(0,608) scale(1,-1)">Код</text>
+			<path d="M 486,292 L 529,292 Z" style="stroke: rgb(32%,46%,58%); stroke-linecap: butt; stroke-width: 1.2;"/>
+			<polygon points="529 292, 522.6969 295.0448, 522.6969 288.9552" style="stroke: rgb(32%,46%,58%); stroke-linecap: butt; stroke-width: 1; fill: rgb(32%,46%,58%); fill-rule: evenodd;"/>
+			<rect x="493.66015625" y="302" width="27.6796875" height="13" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="496.66015625" y="304" style="font-family: Arial; font-size: 10px;fill: rgb(9%,17%,25%); stroke:none;" transform="translate(0,608) scale(1,-1)">Gate</text>
+			<rect x="529" y="77" width="210" height="108" rx="9" ry="9" style="stroke: rgb(32%,46%,58%); stroke-linecap: butt; stroke-width: 1.3; fill: rgb(93%,95%,98%); fill-rule: evenodd; stroke-dasharray: 5, 3;"/>
+			<text x="541" y="163" style="font-family: Arial-Bold; font-size: 12px;fill: rgb(32%,46%,58%); stroke:none;" transform="translate(0,326) scale(1,-1)">КТ-3: registry</text>
+			<text x="541" y="145" style="font-family: Arial; font-size: 11px;fill: rgb(9%,17%,25%); stroke:none;" transform="translate(0,290) scale(1,-1)">Проверенный образ</text>
+			<text x="541" y="131" style="font-family: Arial; font-size: 11px;fill: rgb(9%,17%,25%); stroke:none;" transform="translate(0,262) scale(1,-1)">Неизменяемый SHA / digest</text>
+			<text x="541" y="117" style="font-family: Arial; font-size: 11px;fill: rgb(9%,17%,25%); stroke:none;" transform="translate(0,234) scale(1,-1)">Сохранить предыдущую версию</text>
+			<rect x="276" y="77" width="210" height="108" rx="9" ry="9" style="stroke: rgb(32%,46%,58%); stroke-linecap: butt; stroke-width: 1.3; fill: rgb(93%,95%,98%); fill-rule: evenodd; stroke-dasharray: 5, 3;"/>
+			<text x="288" y="163" style="font-family: Arial-Bold; font-size: 12px;fill: rgb(32%,46%,58%); stroke:none;" transform="translate(0,326) scale(1,-1)">КТ-3: deploy + smoke</text>
+			<text x="288" y="145" style="font-family: Arial; font-size: 11px;fill: rgb(9%,17%,25%); stroke:none;" transform="translate(0,290) scale(1,-1)">Учебная VM, миграция</text>
+			<text x="288" y="131" style="font-family: Arial; font-size: 11px;fill: rgb(9%,17%,25%); stroke:none;" transform="translate(0,262) scale(1,-1)">Readiness + создать / сыграть</text>
+			<text x="288" y="117" style="font-family: Arial; font-size: 11px;fill: rgb(9%,17%,25%); stroke:none;" transform="translate(0,234) scale(1,-1)">Ручное approval допустимо</text>
+			<rect x="23" y="77" width="210" height="108" rx="9" ry="9" style="stroke: rgb(32%,46%,58%); stroke-linecap: butt; stroke-width: 1.3; fill: rgb(93%,95%,98%); fill-rule: evenodd; stroke-dasharray: 5, 3;"/>
+			<text x="35" y="163" style="font-family: Arial-Bold; font-size: 12px;fill: rgb(32%,46%,58%); stroke:none;" transform="translate(0,326) scale(1,-1)">КТ-4: откат</text>
+			<text x="35" y="145" style="font-family: Arial; font-size: 11px;fill: rgb(9%,17%,25%); stroke:none;" transform="translate(0,290) scale(1,-1)">Предыдущий digest + smoke</text>
+			<text x="35" y="131" style="font-family: Arial; font-size: 11px;fill: rgb(9%,17%,25%); stroke:none;" transform="translate(0,262) scale(1,-1)">Совместимая схема / restore</text>
+			<text x="35" y="117" style="font-family: Arial; font-size: 11px;fill: rgb(9%,17%,25%); stroke:none;" transform="translate(0,234) scale(1,-1)">NFR-009/010</text>
+			<path d="M 635,243 L 635,185 Z" style="stroke: rgb(32%,46%,58%); stroke-linecap: butt; stroke-width: 1.2;"/>
+			<polygon points="635 185, 638.0448 191.3031, 631.9552 191.3031" style="stroke: rgb(32%,46%,58%); stroke-linecap: butt; stroke-width: 1; fill: rgb(32%,46%,58%); fill-rule: evenodd;"/>
+			<rect x="587.9765625" y="209" width="94.046875" height="13" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="590.9765625" y="211" style="font-family: Arial; font-size: 10px;fill: rgb(9%,17%,25%); stroke:none;" transform="translate(0,422) scale(1,-1)">Только зелёный CI</text>
+			<path d="M 529,130 L 486,130 Z" style="stroke: rgb(32%,46%,58%); stroke-linecap: butt; stroke-width: 1.2;"/>
+			<polygon points="486 130, 492.3031 126.9552, 492.3031 133.0448" style="stroke: rgb(32%,46%,58%); stroke-linecap: butt; stroke-width: 1; fill: rgb(32%,46%,58%); fill-rule: evenodd;"/>
+			<rect x="488.93603515625" y="141" width="37.1279296875" height="13" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="491.93603515625" y="143" style="font-family: Arial; font-size: 10px;fill: rgb(9%,17%,25%); stroke:none;" transform="translate(0,286) scale(1,-1)">Deploy</text>
+			<path d="M 276,130 L 233,130 Z" style="stroke: rgb(32%,46%,58%); stroke-linecap: butt; stroke-width: 1.2;"/>
+			<polygon points="233 130, 239.3031 126.9552, 239.3031 133.0448" style="stroke: rgb(32%,46%,58%); stroke-linecap: butt; stroke-width: 1; fill: rgb(32%,46%,58%); fill-rule: evenodd;"/>
+			<rect x="238.06005859375" y="141" width="32.8798828125" height="13" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="241.06005859375" y="143" style="font-family: Arial; font-size: 10px;fill: rgb(9%,17%,25%); stroke:none;" transform="translate(0,286) scale(1,-1)">Отказ</text>
+		</g>
+	</g>
+</svg>
